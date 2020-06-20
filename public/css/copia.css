@@ -1,0 +1,117 @@
+
+
+.display-image {
+    position: relative;
+    overflow: hidden;
+}
+
+    .display-image img {
+        width: 100%;
+        float: left;
+    }
+
+.box-header__icon {
+    height: 90px;
+    position: relative;
+    top: 0;
+    float: left;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+  	border-radius: 5px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .box-header__icon {
+        height: 100%;
+        width: 100%;
+    }
+}
+.box-container_cabezote .container1 {
+    height: 100%;
+}
+.container1 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+@media (min-width: 992px)
+.container1 {
+    width: 968px;
+}
+.box-header__icon img {
+    float: left;
+    height: 100%;
+    width: auto;
+}
+
+.box-header__icon span {
+    vertical-align: top;
+    line-height: 90px;
+    font-size: 2.6em;
+    color: white;
+    font-weight: 100;
+    margin-left: 20px;
+    float: left;
+    text-shadow: 2px 3px 4px hsl(0,0%,0%)
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .box-header__icon span {
+        font-size: 1.87em;
+    }
+}
+
+.box-header__icon span.large {
+    font-size: 2.3em;
+  /*  line-height: 42px;*/
+    vertical-align: top;
+    width: 80%;
+}
+.box-header__icon {
+    height: 90px;
+    /* position: relative; */
+    top: 0;
+    float: left;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 5px;
+}
+.box-container_cabezote {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .box-header__icon span {
+        margin-left: 2%;
+        width: 80%;
+        position: relative;
+        height: 100%;
+        line-height: normal;
+        font-size: 0.9em;
+        -webkit-align-items: center;
+        /* Safari 7.0+ */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+.box-container_cabezote {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
