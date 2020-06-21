@@ -93,7 +93,6 @@ class InterfacesController extends Controller
                 }
               
 
-
              
                     // intefaz  listado general trabajador  
                     public  function interfasListadoGeneralTrabajador(Request $request)

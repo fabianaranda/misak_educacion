@@ -266,202 +266,626 @@
                         
 
                        </div> <!-- fin titulo_informacion-->
-                   <!--Inicio de formulario-->
-             <div class="col-md-12 col-sm-12 col-xs-12">
+                
+				
+				
+				
 
-                  <div class="col-md-6 col-sm-12 col-xs-12">
 
-                  <div class="form-group input-group-sm">
-                  <label ><span class="asterisco">*</span>Nombres</label>
-                   <input name="nombre" type="text"  onkeyup="this.value = this.value.toUpperCase();"  class="form-control" style="" autocomplete="of"  value=""  required=""  >
-              </div>
-		        
-			      	  <div class="form-group input-group-sm">
-                    <label ><span class="asterisco">*</span>Apellidos</label>
-                   <input name="apellidos" type="text"  onkeyup="this.value = this.value.toUpperCase();"  class="form-control" style="" autocomplete="of"  value=""  required=""  >
-               </div>
+<div class="col-md-12 col-sm-12 col-xs-12">
 
-          <div class="form-group input-group-sm">
-            <label ><span class="asterisco">*</span>Tipo Identificación</label>
-            <select name="tipo_identificacion" type="text"  maxlength="20" id="txtPrimerNombre" autocomplete="of" class="form-control " required="" >
-              <option value="">Seleccione</option>
-              <option value="TARJETA IDENTIDAD">Tarjeta de Identidad</option>
-              <option value="CEDULA CIUDADANIA">Cédula de Ciudadania</option>
-              <option value="PASAPORTE">Pasaporte</option>
-            </select>
-         </div>
-
-	               <div class="form-group input-group-sm">
-                    <label ><span class="asterisco">*</span>Número de Indentificación</label>
-                   <input name="documento_identidad" type="number" min="30000000" min="9999999999" class="form-control" style="" autocomplete="of"  value="" required=""  >
-               </div>
-			   
-			      
-		 
-         <div class="form-group input-group-sm">
-           <label f><span class="asterisco">*</span>Genero</label>
-           <select name="sexo" type="text"  maxlength="20"  autocomplete="of" class="form-control "  required="">
-           <option value="">Selec</option>
-           <option value="FEMENINO">Femenino</option>
-	        	<option value="MASCULINO">Masculino</option>
-          </select>
-         </div>
-       
-
-      
-            
-           
-         
+<div class="titulo_informacion">
+    <h1 >Datos Personales
+        <a onclick="return validarCamposVacios();UpdateTextArea();" id="btnGrabarHVSup" title="Guardar" class="btn btn-success btn-sm pull-right" value="Guardar" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$ctl00$ContenidoPanel$HojaDeVidaPanel$ContenidoHojaDeVida$ucInfoBasica$btnGrabarHVSup&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Guardar</a>
         
-			    <div class="form-group ">
-           <label ><span class="asterisco">*</span>Fecha de nacimiento</label>
-          
-            <div class="form-inline input-group-sm">
-            
-            <input name="fecha_nacimiento" type="date"    class="form-control" style=""    required="" >
-         
-         </div>
-      
-    
-       </div>
-	   
-	     			   
-    </div>
-                      <!-- fin comlumna 1 -->
-	
-                     <!--Columna 2 -->
-         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group input-group-sm">
-         
-
-        
-  <!--
-           <div class="form-group input-group-sm">
-           <label f><span class="asterisco">*</span>Sexo</label>
-           <select name="sexo" type="text"  maxlength="20"  autocomplete="of" class="form-control " required="">
-           <option value="">Selec</option>
-           <option value="F">Femenino</option>
-	        	<option value="M">Masculino</option>
-          </select>
-         </div>
-		 -->
-		  <div class="form-group input-group-sm">
-           <label ><span class="asterisco">*</span>Estado civil</label>
-           <select name="estado_civil" type="text"  maxlength="20" autocomplete="of" class="form-control " required="">
-           <option  value="">Seleccione</option>
-		        <option value="SOLTERO">Soltero(a)</option>
-		       <option value="CASADO">Casado(a)</option>
-		      <option value="SEPADADO">Separado(a) o Divorciado(a)</option>
-		      <option value="VIUDO">Viudo(a)</option>
-		     <option value="UNION LIBRE">Unión Libre</option>
-          </select>
-         </div>    
-	 </div>
-    
-   <div class="form-group input-group-sm">
-                    <label ><span class="asterisco">*</span>Numero Celular</label>
-                   <input name="telefono" type="text" v class="form-control" style="" autocomplete="of"  value="" required=""  >
-               </div>
-       
-   <div class="form-group input-group-sm">
-     <label for="title">* Programa </label>
-                <select name="codigo_programa" id="servicio_internet" class="form-control"   style="width:200p"  required="">
-                <option value="" selected disabled>Programa</option>
-                   @foreach($programa as $key => $programa)
-                  <option value="{{$key}}"> {{$programa}}</option>
-                  @endforeach
-            </select>
-       </div>
-                  
-
-                <div class="form-group input-group-sm">
-                    <label ><span class="asterisco">*</span>Ocupacion</label>
-                   <input name="ocupacion" type="text" v class="form-control" style="" autocomplete="of"  value=""  required="" >
-               </div>
-
-              
-        </div>
-             <!-- Colunmas  fecha  de contrato y fin de contrato -->
-          <div class="col-md-6 col-sm-12 col-xs-12">
-                 <div class="col-md-6 col-sm-12 col-xs-12">
-                 <label ><span class="asterisco">*</span>Inicio Contrato</label>
-                 <input name="fecha_contratacion" type="date"    class="form-control" style="" autocomplete="of"  value=""  required="" >
-                 </div> 
-
-                 <div class="col-md-6 col-sm-12 col-xs-12">
-                 <label ><span class="asterisco">*</span>Fin Contrato</label>
-                 <input name="fin_contrato" type="date"    class="form-control" style="" autocomplete="of"  value=""  required="" >
-                 </div>
-                 <br>
-               
-        </div>
-         <!--  FIN Colunmas  fecha  de contrato y fin de contrato -->
-         
-           <br>
-           <br>
-                 <!--Cargar hoja de vida -->
-                  <label   <span class="asterisco">*</span>Cargar Hoja de Vida formato PDF</label>
-                <input type="file" name="docomento_pdf" class="btn-danger" >
-                <!--Fin input cargar hoja de vida-->
-  </div>
+        <div class="clearfix"></div>
+    </h1>
 </div>
-              <br>
-              <br>
-              <br>
-              <div class="col-md-12 col-sm-12 col-xs-12">
-           <div class="titulo_informacion">
-           <h1>*Ingresar la direccion del  Empleado </h1>
-           </div>
-           <div class="col-md-6">
-        <label for="title">Seleccione Departamento:</label>
-        <select name="departamento" id="departamento" class="form-control" style="width:" required="" >
-            	<option value="" selected disabled>Selecione Departamento</option>
-                  @foreach($departamento as $key => $departamento)
-                  <option value="{{$key}}"> {{$departamento}}</option>
-                  @endforeach
 
-             </select>
+<div class="col-md-12 col-sm-12 col-xs-12">
+       
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Tipo de documento</label>
+            <select name=""  class="form-control">
+	<option value="0">Seleccione</option>
+	<option selected="selected" value="CC">Cédula de Ciudadanía</option>
+	<option value="TI">Tarjeta de Identidad</option>
+	<option value="DNI">Documento Nacional de Identificación</option>
+
+</select>
+        </div>
+
+        
+
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Primer nombre</label>
+            <input name="" type="text"  class="form-control OnlyTxt" autocomplete="off">
             
-             <label for="title">Seleccione Municipio:</label>
-                <select name="codigo_municipio" id="municipio" class="form-control" style="width:" required="" >
-                </select>
+        </div>
 
-                <div class="form-group input-group-sm">
-                    <label ><span class="asterisco">*</span>Direccion </label>
-                   <input name="direccion" type="text" v class="form-control" style="" autocomplete="of"  value=""  required="" >
-             </div>
-             <!--
-              <label for="title">Seleccione Resguardo:</label>
-                <select name="resguardo" id="resguardo" class="form-control" style="width:" required="" >
-                </select>
--->
-             </div>
+        <div class="form-group input-group-sm">
+            <label for="txtPrimerApellido"><span class="asterisco">*</span>Primer apellido</label>
 
-
-           <div class="col-md-6">
-<!--
-             <label for="title">Seleccione zona:</label>
-                <select name="zona" id="zona" class="form-control" style="width:" required="" >
-                </select>
-
-             <label for="title">Seleccione vereda:</label>
-                <select name="vereda" id="vereda" class="form-control" style="width:"  required="">
-                </select>
-
-             <label for="title">Seleccione sector :</label>
-                <select name="codigo_sector" id="sector" class="form-control" style="width:" required="">
-                </select>
-                -->
-           </div>
-                 
-         </div>
-
-          <input type="button" onclick="limpiarFormulario()" value="Limpiar formulario">
-
+            <input name="" type="text" value="" maxlength="20"  tabindex="5" class="form-control OnlyTxt" autocomplete="off">
             
-           <div class="titulo_informacion"> </div>
+        </div>
+        <div class="form-group ">
+            <label ><span class="asterisco">*</span>Fecha de nacimiento</label>
+            <div class="clearfix"></div>
+            <div class="form-inline input-group-sm">
+                <select name=""  tabindex="7" class="form-control">
+	<option value="">Día</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option  value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select>
+      <select name=""  tabindex="8" class="form-control" ">
+	<option value="">Mes</option>
+	<option value="1">Enero</option>
+	<option value="2">Febrero</option>
+	<option value="3">Marzo</option>
+	<option value="4">Abril</option>
+	<option value="5">Mayo</option>
+	<option value="6">Junio</option>
+	<option value="7">Julio</option>
+	<option value="8">Agosto</option>
+	<option value="9">Septiembre</option>
+	<option selected="selected" value="10">Octubre</option>
+	<option value="11">Noviembre</option>
+	<option value="12">Diciembre</option>
+
+</select>
+                <select name="" id="" tabindex="9" class="form-control" >
+	<option value="">Año</option>
+	<option value="2020">2020</option>
+	<option value="2019">2019</option>
+	<option value="2018">2018</option>
+	<option value="2017">2017</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option value="2013">2013</option>
+	<option value="2012">2012</option>
+	<option value="2011">2011</option>
+	<option value="2010">2010</option>
+	<option value="2009">2009</option>
+	<option value="2008">2008</option>
+	<option value="2007">2007</option>
+	<option value="2006">2006</option>
+	<option value="2005">2005</option>
+	<option value="2004">2004</option>
+	<option value="2003">2003</option>
+	<option value="2002">2002</option>
+	<option value="2001">2001</option>
+	<option value="2000">2000</option>
+	<option value="1999">1999</option>
+	<option value="1998">1998</option>
+	<option value="1997">1997</option>
+	<option value="1996">1996</option>
+	<option value="1995">1995</option>
+	<option  value="1994">1994</option>
+	<option value="1993">1993</option>
+	<option value="1992">1992</option>
+	<option value="1991">1991</option>
+	<option value="1990">1990</option>
+	<option value="1989">1989</option>
+	<option value="1988">1988</option>
+	<option value="1987">1987</option>
+	<option value="1986">1986</option>
+	<option value="1985">1985</option>
+	<option value="1984">1984</option>
+	<option value="1983">1983</option>
+	<option value="1982">1982</option>
+	<option value="1981">1981</option>
+	<option value="1980">1980</option>
+	<option value="1979">1979</option>
+	<option value="1978">1978</option>
+	<option value="1977">1977</option>
+	<option value="1976">1976</option>
+	<option value="1975">1975</option>
+	<option value="1974">1974</option>
+	<option value="1973">1973</option>
+	<option value="1972">1972</option>
+	<option value="1971">1971</option>
+	<option value="1970">1970</option>
+	<option value="1969">1969</option>
+	<option value="1968">1968</option>
+	<option value="1967">1967</option>
+	<option value="1966">1966</option>
+	<option value="1965">1965</option>
+	<option value="1964">1964</option>
+	<option value="1963">1963</option>
+	<option value="1962">1962</option>
+	<option value="1961">1961</option>
+	<option value="1960">1960</option>
+	<option value="1959">1959</option>
+	<option value="1958">1958</option>
+	<option value="1957">1957</option>
+	<option value="1956">1956</option>
+	<option value="1955">1955</option>
+	<option value="1954">1954</option>
+	<option value="1953">1953</option>
+	<option value="1952">1952</option>
+	<option value="1951">1951</option>
+	<option value="1950">1950</option>
+	<option value="1949">1949</option>
+	<option value="1948">1948</option>
+	<option value="1947">1947</option>
+	<option value="1946">1946</option>
+	<option value="1945">1945</option>
+	<option value="1944">1944</option>
+	<option value="1943">1943</option>
+	<option value="1942">1942</option>
+	<option value="1941">1941</option>
+	<option value="1940">1940</option>
+	<option value="1939">1939</option>
+	<option value="1938">1938</option>
+	<option value="1937">1937</option>
+	<option value="1936">1936</option>
+	<option value="1935">1935</option>
+	<option value="1934">1934</option>
+	<option value="1933">1933</option>
+	<option value="1932">1932</option>
+	<option value="1931">1931</option>
+	<option value="1930">1930</option>
+	<option value="1929">1929</option>
+	<option value="1928">1928</option>
+	<option value="1927">1927</option>
+	<option value="1926">1926</option>
+	<option value="1925">1925</option>
+	<option value="1924">1924</option>
+	<option value="1923">1923</option>
+	<option value="1922">1922</option>
+	<option value="1921">1921</option>
+	<option value="1920">1920</option>
+	<option value="1919">1919</option>
+	<option value="1918">1918</option>
+	<option value="1917">1917</option>
+	<option value="1916">1916</option>
+	<option value="1915">1915</option>
+	<option value="1914">1914</option>
+	<option value="1913">1913</option>
+	<option value="1912">1912</option>
+	<option value="1911">1911</option>
+	<option value="1910">1910</option>
+	<option value="1909">1909</option>
+	<option value="1908">1908</option>
+	<option value="1907">1907</option>
+	<option value="1906">1906</option>
+	<option value="1905">1905</option>
+	<option value="1904">1904</option>
+	<option value="1903">1903</option>
+	<option value="1902">1902</option>
+	<option value="1901">1901</option>
+	<option value="1900">1900</option>
+	<option value="1899">1899</option>
+
+</select>
+            </div>
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Sexo</label>
+            <select name=""  tabindex="11" class="form-control">
+	<option value="">Seleccione</option>
+	<option value="Femenino">Femenino</option>
+	<option  value="Masculino">Masculino</option>
+
+</select>
+
+        </div>
+		
+        <div  class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Fecha expedicion CC</label>
+           <input name="" type="date"  maxlength="20"  tabindex="2" class="form-control" autocomplete="off">
+        </div>
+		
+		  <div id="ctl00_ctl00_ctl00_ContenidoPanel_HojaDeVidaPanel_ContenidoHojaDeVida_ucInfoBasica_TipoLibreta" class="form-group input-group-sm">
+            <label id="lblTipoLibreta" style="display: none;"><span class="asterisco">*</span>Tipo de libreta</label>
+            <select name="ctl00$ctl00$ctl00$ContenidoPanel$HojaDeVidaPanel$ContenidoHojaDeVida$ucInfoBasica$ddlTipoLibreta" id="ddlTipoLibreta" tabindex="12" class="form-control" style="display: none;">
+	<option selected="selected" value="">Seleccione</option>
+	<option value="P">Primera</option>
+	<option value="S">Segunda</option>
+
+</select>
+        </div>
+
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Número de documento</label>
+            <input name="" type="text" value="1064436304" maxlength="20"  tabindex="2" class="form-control" autocomplete="off">
+            
+        </div>
+
+
+        
+
+        <div class="form-group input-group-sm">
+            <label >Segundo nombre</label>
+            <input name="" type="text"  tabindex="4" class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label >Segundo apellido</label>
+            <input name="" type="text" value="TUNUBALA" maxlength="20"  class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label >Estado civil</label>
+            <select name=""  tabindex="10" class="form-control">
+	<option selected="selected" value="Seleccione">Seleccione</option>
+	<option value="1">Soltero(a)</option>
+	<option value="2">Casado(a)</option>
+	<option value="3">Separado(a) o Divorciado(a)</option>
+	<option value="4">Viudo(a)</option>
+	<option value="5">Unión Libre</option>
+
+</select>
+        </div>
+
+           <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Lugar de Expedición CC</label>
+            <input name="" type="text"  tabindex="14" class="form-control" autocomplete="off">
+        </div>
+		 <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Carnet de salud</label>
+            <input name="" type="text"  tabindex="14" class="form-control" autocomplete="off">
+        </div>
+		<!--
+         <div  class="form-group input-group-sm">
+            <label id="lblLibretaMilitar"><span class="asterisco">*</span>Libreta militar</label>
+            <select name="" onchange="ShowTipolibretaMilitar();" id="ddlLibretaMilitar" tabindex="13" class="form-control">
+	        <option value="">Seleccione</option>
+	        <option value="1">Si</option>
+	         <option value="0">No</option>
+           </select>
+        </div>-->
+
+          <div  class="form-group input-group-sm">
+            <label id="lblNumeroLibreta" style="display: none;"><span class="asterisco">*</span>Número de libreta</label>
+            <input name="" type="text" maxlength="20" id="txtNumeroLibreta" tabindex="14" class="form-control" onkeypress="return AceptaNumero(event);" autocomplete="off" style="display: none;">
+            
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+
+        <div class="form-group input-group-sm">
+            <label for="ddlPaisNacimiento"><span class="asterisco">*</span>Comunidad Indigena</label>
+            <select name="ctl00$ctl00$ctl00$ContenidoPanel$HojaDeVidaPanel$ContenidoHojaDeVida$ucInfoBasica$ddlPaisNacimiento" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ctl00$ctl00$ContenidoPanel$HojaDeVidaPanel$ContenidoHojaDeVida$ucInfoBasica$ddlPaisNacimiento\&#39;,\&#39;\&#39;)&#39;, 0)" id="ddlPaisNacimiento" tabindex="13" class="form-control">
+	<option value="">SI</option>
+	<option value="">NO</option>
+	
+
+</select>
+        </div>
+
+      
+    </div> <!-- FIN COLUMNA 1-->
+	
+    <div class="col-md-6 col-sm-12 col-xs-12">
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>¿Cual? </label>
+            <input name="" type="text"  maxlength="20"  class="form-control" autocomplete="off">
+           
+        </div>
+       
+      
+
+
+    </div>
+</div>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12"></div>
+</div>
+
+
+
+<div class="titulo_informacion">
+    <h1 >Datos de Contacto</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Correo electrónico</label>
+            <div >
+	
+                    <div class="input-group-sm">
+                   <input name="" type="text" value="" maxlength="20"  class="form-control" autocomplete="off">
+            
+                    </div>
+                
+             </div>
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label for="txtbarrio">Departamento de residencia</label>
+            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+                        
+       
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco"></span>Dirección</label>
+            <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
+            
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group  input-group-sm">
+            <label for="UpdatePanel12"><span class="asterisco">*</span>Teléfono de contacto</label>
+            <div >
+	
+                    <div class="input-group-sm">
+                       <input name="" type="text" value="" maxlength="20" class="form-control" autocomplete="off">
+            
+                    </div>
+                
+</div>
+
+        </div>
+                        
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Municipio de residencia</label>
+            <select name=""  tabindex="25" class="form-control">
+	<option value="Seleccione">Seleccione</option>
+	<option value="1">Urbano</option>
+	<option  value="2">Rural</option>
+
+</select>
+        </div>
+
+       
+    </div>
+</div>
+
+                
+
+<div class="titulo_informacion">
+    <h1 >Información de la institución y dirección donde va laborar</h1>
+</div>
+                
+<div class="col-xs-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Departamento donde va laboral</label>
+            <div >
+	
+                    <div class="input-group-sm">
+                   <input name="" type="text" value="" maxlength="20"  class="form-control" autocomplete="off">
+            
+                    </div>
+                
+             </div>
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label for="txtbarrio">Institucion donde va laboral</label>
+            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+                        
+       
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco"></span>Sede de la institucion donde va laboral</label>
+            <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
+            
+        </div>
+
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group  input-group-sm">
+            <label for="UpdatePanel12"><span class="asterisco">*</span>Municipio donde va laboral</label>
+            <div >
+	
+                    <div class="input-group-sm">
+                       <input name="" type="text" value="" maxlength="20" class="form-control" autocomplete="off">
+            
+                    </div>
+                
+            </div>
+
+        </div>
+                        
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Tipo institucion donde va laboral</label>
+            <select name=""  tabindex="25" class="form-control">
+	<option value="Seleccione">Seleccione</option>
+	<option value="1">Urbano</option>
+	<option  value="2">Rural</option>
+
+</select>
+        </div>
+
+       
+    </div>
+</div>
+</div>
+
+
+
+                
+
+<div class="titulo_informacion">
+    <h1 >Tipo labor que ejerce el empleado</h1>
+</div>
+                
+<div class="col-xs-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>tipo trabajo </label>
+            <div >
+	
+                    <div class="input-group-sm">
+                   <input name="" type="text" value="" maxlength="20"  class="form-control" autocomplete="off">
+            
+                    </div>
+                
+             </div>
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label for="txtbarrio">Tipo contrato</label>
+            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+		
+		<div class="form-group input-group-sm">
+            <label for="txtbarrio">Pensione</label>
+            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
+            
+        </div>
+                        
+       
+ <!--
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco"></span>Salario asignado </label>
+            <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
+            
+        </div>-->
+
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group  input-group-sm">
+            <label for="UpdatePanel12"><span class="asterisco">*</span>Categoria labor </label>
+            <div >
+	
+                    <div class="input-group-sm">
+                       <input name="" type="text" value="" maxlength="20" class="form-control" autocomplete="off">
+            
+                    </div>
+                
+            </div>
+
+        </div>
+                        
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Salario Asignado</label>
+            <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
+        </div>
+
+       
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="titulo_informacion">
+    <h1 >Observaciones del empelado  al momento de de hacer el contrato laboral</h1>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="form-group input-group-sm">
+        <label ><span class="asterisco">*</span>_</label>
+        <a class="tooltipDemo">
+            <i class="icon-question-sign"></i>
+            <span>-----
+                <br>
+                -.</span>
+        </a>
+        <textarea name="" rows="20" cols="20"  tabindex="48" class="form-control OnlyTxtNum" autocomplete="off" onkeydown="textCounter(this,this.form.LentxtFuncionesR,2000);" onkeyup="textCounter(this,this.form.LentxtFuncionesR,2000);" style="min-height: 250px;"></textarea>
+        <div class="well well-sm">
+            Caracteres Ingresar                                                      
+            <input readonly="" type="text" name="LentxtFuncionesR" size="3" maxlength="4" value="2000">
+        </div>
+
+    </div>
+  </div>
+  
+  <div class="titulo_informacion"> <h1 ></h1>.</div>
+</div>
+				
+				
+				
+				
+                   <!--FIN de formulario-->
           
-           <div class="titulo_informacion">
+			
+
+            
+
+         
+            
+        
                
            
 	 </form> 
@@ -496,6 +920,7 @@
     margin-left: -150px;
    }    
  </style>
+         <input type="button" onclick="limpiarFormulario()" value="Limpiar formulario">
 
           <div class="pull-right ">
             <button class="boton_guardarContinuar" id="guardar">GUARDAR Y CONTINUAR</button>
@@ -673,6 +1098,60 @@ $('#persona').submit(function(e)
    });
  
 </script>
+
+
+<script type="text/javascript">
+  
+
+    //document.addEventListener('DOMContentLoaded', function () {
+    //    document.getElementById('ddlSexo').onchange(showLibretaMilitar());
+    //});
+
+    function showLibretaMilitar() {
+        //  var strLibretamilitar = v.options[v.selectedIndex].value;
+        var e = document.getElementById("ddlSexo");
+        if (isNullOrEmpty(e)) {
+            return;
+        }
+        var strLibretamilitar = e.options[e.selectedIndex].value;
+
+        if (strLibretamilitar == "M") {
+            $('#lblLibretaMilitar').show();
+            $('#ddlLibretaMilitar').show();
+        }
+        else {
+            ddlLibretaMilitar.selectedIndex = 0;
+            $('#lblLibretaMilitar').hide();
+            $('#ddlLibretaMilitar').hide();
+            $('#lblTipoLibreta').hide();
+            $('#ddlTipoLibreta').hide();
+            $('#lblNumeroLibreta').hide();
+            $('#txtNumeroLibreta').hide();
+        }
+    }
+
+    function ShowTipolibretaMilitar() {
+        var e = document.getElementById("ddlLibretaMilitar");
+        if (isNullOrEmpty(e)) {
+            return;
+        }
+        var strTieneLibreta = e.options[e.selectedIndex].value;
+        if (strTieneLibreta == '1') {
+            $('#lblTipoLibreta').show();
+            $('#ddlTipoLibreta').show();
+            $('#lblNumeroLibreta').show();
+            $('#txtNumeroLibreta').show();
+        }
+        else {
+            $('#lblTipoLibreta').hide();
+            $('#ddlTipoLibreta').hide();
+            $('#lblNumeroLibreta').hide();
+            $('#txtNumeroLibreta').hide();
+        }
+    }
+	
+</script>
+
 	
 
 @endsection
