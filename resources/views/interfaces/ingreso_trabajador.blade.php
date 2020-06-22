@@ -704,74 +704,7 @@
 </div>
 
                 
-
-<div class="titulo_informacion">
-    <h1 >Información de la institución y dirección donde va laborar</h1>
-</div>
-                
-<div class="col-xs-12">
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group input-group-sm">
-            <label ><span class="asterisco">*</span>Departamento donde va laboral</label>
-            <div >
-	
-                     <select name="departamento" id="departemento_lugar_trabajo" class="form-control" style="width:" required="" >
-            	<option value="" selected disabled>Selecione Departamento</option>
-                  @foreach($departemento_lugar_trabajo as $key => $departemento_lugar_trabajo)
-                  <option value="{{$key}}"> {{$departemento_lugar_trabajo}}</option>
-                  @endforeach
-
-             </select>
-                
-             </div>
-        </div>
-
-        <div class="form-group input-group-sm">
-            <label for="txtbarrio">Institucion donde va laboral</label>
-            <select name="municipio" id="nombre_institucion" class="form-control" style="width:" required="" >
-                </select>
-        </div>
-                        
-       
-
-        <div class="form-group input-group-sm">
-            <label ><span class="asterisco"></span>Sede de la institucion donde va laboral</label>
-            <select name="municipio" id="sede_institucion" class="form-control" style="width:" required="" >
-                </select>
-        </div>
-
-    </div>
-
-    <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group  input-group-sm">
-            <label for="UpdatePanel12"><span class="asterisco">*</span>Municipio donde va laboral</label>
-            <div >
-	
-                    <div class="input-group-sm">
-                        <select name="municipio" id="municipio_lugar_trabajo" class="form-control" style="width:" required="" >
-                </select>
-                    </div>
-                
-            </div>
-
-        </div>
-                        
-        <div class="form-group input-group-sm">
-            <label ><span class="asterisco">*</span>Tipo institucion donde va laboral</label>
-            <select name="municipio" id="tipo_institucion" class="form-control" style="width:" required="" >
-                </select>
-        </div>
-
-       
-    </div>
-</div>
-</div>
-
-
-
-                
-
+--------
 <div class="titulo_informacion">
     <h1 >Tipo labor que ejerce el empleado</h1>
 </div>
@@ -849,45 +782,80 @@
             <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
         </div>
 
+       <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Hoja de Vida formato PDF</label>
+            <input name="" type="file" maxlength="250" class="form-control" autocomplete="off">
+        </div>
        
     </div>
 </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="titulo_informacion">
-    <h1 >Observaciones del empelado  al momento de de hacer el contrato laboral</h1>
+    <h1 >Información de la institución y dirección donde va laborar</h1>
 </div>
+                
+<div class="col-xs-12">
 <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="form-group input-group-sm">
-        <label ><span class="asterisco">*</span>_</label>
-        <a class="tooltipDemo">
-            <i class="icon-question-sign"></i>
-            <span>-----
-                <br>
-                -.</span>
-        </a>
-        <textarea name="" rows="20" cols="20"  tabindex="48" class="form-control OnlyTxtNum" autocomplete="off" onkeydown="textCounter(this,this.form.LentxtFuncionesR,2000);" onkeyup="textCounter(this,this.form.LentxtFuncionesR,2000);" style="min-height: 250px;"></textarea>
-        <div class="well well-sm">
-            Caracteres Ingresar                                                      
-            <input readonly="" type="text" name="LentxtFuncionesR" size="3" maxlength="4" value="2000">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Departamento donde va laboral</label>
+            <div >
+	
+                     <select name="departamento" id="departemento_lugar_trabajo" class="form-control" style="width:" required="" >
+            	<option value="" selected disabled>Selecione Departamento</option>
+                  @foreach($departemento_lugar_trabajo as $key => $departemento_lugar_trabajo)
+                  <option value="{{$key}}"> {{$departemento_lugar_trabajo}}</option>
+                  @endforeach
+
+             </select>
+                
+             </div>
+        </div>
+
+        <div class="form-group input-group-sm">
+            <label for="txtbarrio">Institucion donde va laboral</label>
+            <select name="municipio" id="nombre_institucion" class="form-control" style="width:" required="" >
+                </select>
+        </div>
+                        
+       
+
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco"></span>Sede de la institucion donde va laboral</label>
+            <select name="municipio" id="sede_institucion" class="form-control" style="width:" required="" >
+                </select>
         </div>
 
     </div>
-  </div>
-  
+
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="form-group  input-group-sm">
+            <label for="UpdatePanel12"><span class="asterisco">*</span>Municipio donde va laboral</label>
+            <div >
+	
+                    <div class="input-group-sm">
+                        <select name="municipio" id="municipio_lugar_trabajo" class="form-control" style="width:" required="" >
+                </select>
+                    </div>
+                
+            </div>
+
+        </div>
+                        
+        <div class="form-group input-group-sm">
+            <label ><span class="asterisco">*</span>Tipo institucion donde va laboral</label>
+            <select name="municipio" id="tipo_institucion" class="form-control" style="width:" required="" >
+                </select>
+        </div>
+
+       
+    </div>
+</div>
+</div>
+
+
   <div class="titulo_informacion"> <h1 ></h1>.</div>
 </div>
 				
