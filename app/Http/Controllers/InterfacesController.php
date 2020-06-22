@@ -72,6 +72,21 @@ class InterfacesController extends Controller
                 return view('interfaces.ingreso_trabajador');
             }
 
+              // intefaz  nivel educativo  
+            public  function interfas_nivel_academico(Request $request)
+            {
+                $request->user()->authorizeRoles(['acceso total','ingreso de empleado al sistema']);
+                return view('interfaces.nivel_academico');
+            }
+
+                // intefaz  observaciones trabajador 
+            public  function interfas_observaciones_trabajador(Request $request)
+            {
+                $request->user()->authorizeRoles(['acceso total','ingreso de empleado al sistema']);
+                return view('interfaces.observaciones');
+            }
+
+
               // intefaz  informacion  guardado del trabajador   
               public  function interfas_informacion_trabjador($id_persona,Request $request)
               {

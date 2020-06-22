@@ -197,10 +197,10 @@
 		                          </td>
 				
 				              
-			  
+                                  
 		                       <td style="width:3px;"></td>
 		                        <td title="Miembros de la familia   Misak " >
-		                          <table class="estatic">
+		                          <table class="active">
 					              <tbody>
 			                      <tr>
 				                   <td ><b  href="" >NIVEL ACADEMICO</b></td>
@@ -215,7 +215,7 @@
 				
 				             <td style="width:3px;"></td>
 		                       <td  title="Nivel educativo  que tiene  la persona que vive en la familia" >
-		                        <table class="active" >
+		                        <table class="estatic" >
 			                       <tbody>
 			                        <tr>
 				                    <td >
@@ -231,14 +231,14 @@
                               </table>
    
 			                           <div  class="color_infor noPrint" style="margin-top: 15px;">  
-					                     <span  class="color_infor  noPrint">Usted se encuentra en: &nbsp;&nbsp;Ingreso de trabajador  &gt; <font color="#666666">Nivel Academico</font></span>        
+					                     <span  class="color_infor  noPrint">Usted se encuentra en: &nbsp;&nbsp;Ingreso de trabajador  &gt; <font color="#666666">Observaciones</font></span>        
 			                           </div>															
 										<div class="well resume-module module-jobs" >
                                        <h2 class="module-title">
-                                          Agregar Nivel Academico obtenido por el trabajador 
+                                       Observaciones del empelado  al momento de de hacer el contrato laboral 
                                         </h2>
    				                        <div class="js-box-laboral-experience" id="experiencia-laboral">
-                                          <h3 class="h4">Ingrese todo   los estudios obtenidos  por : </h3>
+                                          <h3 class="h4">--: </h3>
                                           <div class="module-collapsible collapse in" aria-expanded="true">
                                           <div class="module-summary-wrapper laboral-experience">
                                             <p class="text-muted">
@@ -281,38 +281,28 @@
 
                        </div> <!-- fin titulo_informacion-->
                    <!--Inicio de formulario-->
-             <div class="col-md-12 col-sm-12 col-xs-12">
+                   <div class="titulo_informacion">
+    <h1 ></h1>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="form-group input-group-sm">
+        <label ><span class="asterisco">*</span>_</label>
+        <a class="tooltipDemo">
+            <i class="icon-question-sign"></i>
+            <span>-----
+                <br>
+                -.</span>
+        </a>
+        <textarea name="" rows="20" cols="20"  tabindex="48" class="form-control OnlyTxtNum" autocomplete="off" onkeydown="textCounter(this,this.form.LentxtFuncionesR,2000);" onkeyup="textCounter(this,this.form.LentxtFuncionesR,2000);" style="min-height: 250px;"></textarea>
+        <div class="well well-sm">
+            Caracteres Ingresar                                                      
+            <input readonly="" type="text" name="LentxtFuncionesR" size="3" maxlength="4" value="2000">
+        </div>
 
-                  <div class="col-md-6 col-sm-12 col-xs-12">
-
-                  <div class="form-group input-group-sm">
-                  <label ><span class="asterisco">*</span>Nombre del Nivel Academico</label>
-                   <input name="nombres" type="text"    class="form-control" style="" autocomplete="of"  value=""  required="" >
-              </div>
-		        
-		    			   
-    </div>
+    
+  
 	
-         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="form-group input-group-sm">
-          <div class="form-group input-group-sm">
-           <label ><span class="asterisco">*</span>Estado</label>
-           <select name="parentesco" type="text"    tabindex="3" class="form-control " autocomplete="of" required="">
-           <option value="">Selec</option>
-           <option value="En Cuerso">En Cuerso</option>
-           <option value="Incompleto">Incompleto</option>
-           <option value="Graduado">Graduado</option>
-           >
-           
-           
-          </select>
-         </div>
-       
-
-		  
-		 
-          
-	 </div>
+        
 
                
 						<!----				
@@ -343,38 +333,10 @@
            <div class="titulo_informacion"> </div>
            <div class="titulo_informacion">
                
-               <div class="well resume-module module-jobs" >
-                                       <h2 class="module-title">
-                                       Nivel Academico Obtenidos
-                                        </h2>
-   				                        <div class="js-box-laboral-experience" id="experiencia-laboral">
-                                          <h3 class="h4"> Listado estudios realizados  </h3>
-                                          <div class="module-collapsible collapse in" aria-expanded="true">
-                                          <div class="module-summary-wrapper laboral-experience">
-                                            <p class="text-muted">
-                                            
-                                              </p>
-                            </div>
-                                    </div>
-                                 </div>
-				              </div>
-            
+    
              </div>
 	 </form> 
-			    <table class="table table-hover">
-   <thead>
-   <tr>
-    <th>N° Estudios</th>
-    <th>Nombre de Estudios Realizados </th>
-    
-    <th>Estado</th>
-   
-	  <th></th>
-   </tr>
-   </thead>
-  <tbody id="bodyTable">
-  </tbody>
-  </table>
+	
   
   <br>
   

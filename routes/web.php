@@ -47,12 +47,20 @@ Route::get('Certificado-registros/{id_persona}','InterfacesController@interfasRe
 Route::get('Ingresar-Trabajador','InterfacesController@interfas_ingreso_trabajador')->name ('Ingresar-Trabajador');
 Route::get('Ingresar-Trabajador','DireccionTrabajadorController@direccionTrabajador');
 Route::get('get-municipio-list','DireccionTrabajadorController@getmunicipio');
+/// llamar tablas categoria_trabajo
+Route::get('get-categoria_trabajo-list','DireccionTrabajadorController@getcategoria_trabajo');
 /*Route::get('get-resguardo-list','DireccionTrabajadorController@getresguardo');
 Route::get('get-zona-list','DireccionTrabajadorController@getzona');
 Route::get('get-vereda-list','DireccionTrabajadorController@getvereda');
 Route::get('get-sector-list','DireccionTrabajadorController@getsector');*/
 
 Route::POST('Vivienda-Hogar/Guardado', 'GuardarPersonaController@create_trabajador');
+
+
+Route::get('Nivel-Academico','InterfacesController@interfas_nivel_academico')->name ('Nivel-Academico');
+
+Route::get('Observaciones-Trabajador','InterfacesController@interfas_observaciones_trabajador')->name ('Observaciones-Trabajador');
+
 
 
 Route::get('Informacion-trabajador/{id_persona}','InterfacesController@interfas_informacion_trabjador')->name ('Informacion-trabajador');

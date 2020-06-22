@@ -291,7 +291,7 @@
 	<option value="0">Seleccione</option>
 	<option selected="selected" value="CC">Cédula de Ciudadanía</option>
 	<option value="TI">Tarjeta de Identidad</option>
-	<option value="DNI">Documento Nacional de Identificación</option>
+	<option value="CC">Cedula de ciudadania</option>
 
 </select>
         </div>
@@ -624,7 +624,7 @@
 
 
 <div class="titulo_informacion">
-    <h1 >Datos de Contacto</h1>
+    <h1 >Datos de Contacto del Empleado</h1>
 </div>
 
 
@@ -660,8 +660,13 @@
 
         <div class="form-group input-group-sm">
             <label for="txtbarrio">Departamento de residencia</label>
-            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
-            
+             <select name="departamento" id="departamento" class="form-control" style="width:" required="" >
+            	<option value="" selected disabled>Selecione Departamento</option>
+                  @foreach($departamento as $key => $departamento)
+                  <option value="{{$key}}"> {{$departamento}}</option>
+                  @endforeach
+
+             </select>
         </div>
                         
        
@@ -690,12 +695,8 @@
                         
         <div class="form-group input-group-sm">
             <label ><span class="asterisco">*</span>Municipio de residencia</label>
-            <select name=""  tabindex="25" class="form-control">
-	<option value="Seleccione">Seleccione</option>
-	<option value="1">Urbano</option>
-	<option  value="2">Rural</option>
-
-</select>
+          <select name="municipio" id="municipio" class="form-control" style="width:" required="" >
+                </select>
         </div>
 
        
@@ -784,7 +785,13 @@
             <div >
 	
                     <div class="input-group-sm">
-                   <input name="" type="text" value="" maxlength="20"  class="form-control" autocomplete="off">
+                   <select name="departamento" id="tipo_trabajo" class="form-control" style="width:" required="" >
+            	<option value="" selected disabled>Selecione Departamento</option>
+                  @foreach($tipo_trabajo as $key => $tipo_trabajo)
+                  <option value="{{$key}}"> {{$tipo_trabajo}}</option>
+                  @endforeach
+
+             </select>
             
                     </div>
                 
@@ -793,13 +800,24 @@
 
         <div class="form-group input-group-sm">
             <label for="txtbarrio">Tipo contrato</label>
-            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
-            
+             <select name="profecion_id" id="servicio_acueducto" class="form-control"   style="width:" required="">
+                                                <option value="" selected disabled>Seleccione Profesión Actual</option>
+                                                  @foreach($tipo_contrato as $key => $tipo_contrato)
+                                                 <option value="{{$key}}"> {{$tipo_contrato}}</option>
+                                              @endforeach
+                                          </select>
+
         </div>
 		
 		<div class="form-group input-group-sm">
             <label for="txtbarrio">Pensione</label>
-            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
+             <select name="profecion_id" id="servicio_acueducto" class="form-control"   style="width:" required="">
+                                                <option value="" selected disabled>Seleccione Pensione </option>
+                                                  @foreach($pensiones as $key => $pensiones)
+                                                 <option value="{{$key}}"> {{$pensiones}}</option>
+                                              @endforeach
+                                          </select>
+
             
         </div>
                         
@@ -819,8 +837,8 @@
             <div >
 	
                     <div class="input-group-sm">
-                       <input name="" type="text" value="" maxlength="20" class="form-control" autocomplete="off">
-            
+                   <select name="" id="categoria_trabajo" class="form-control" style="width:" required="" >
+                </select>
                     </div>
                 
             </div>
@@ -1098,6 +1116,48 @@ $('#persona').submit(function(e)
    });
  
 </script>
+
+
+<!-- selector  categoria_trabajo -->
+<script type="text/javascript">
+    $('#tipo_trabajo').change(function(){
+    var tipo_trabajoID = $(this).val();    
+    if(tipo_trabajoID){
+        $.ajax({
+           type:"GET",
+           url:"{{url('get-categoria_trabajo-list')}}?id_tipo_trabajo="+tipo_trabajoID,
+           success:function(res){               
+            if(res){
+                $("#categoria_trabajo").empty();
+                $("#categoria_trabajo").append('<option>Seleccione Categoria</option>');
+                $.each(res,function(key,value){
+                    $("#categoria_trabajo").append('<option value="'+key+'">'+value+'</option>');
+                });
+           
+            }else{
+               $("#categoria_trabajo").empty();
+            }
+           }
+        });
+    }else{
+        $("#categoria_trabajo").empty();
+        
+    }      
+   });
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript">
