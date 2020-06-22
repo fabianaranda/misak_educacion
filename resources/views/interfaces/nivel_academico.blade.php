@@ -287,7 +287,7 @@
 
                   <div class="form-group input-group-sm">
                   <label ><span class="asterisco">*</span>Nombre del Nivel Academico</label>
-                   <input name="nombres" type="text"    class="form-control" style="" autocomplete="of"  value=""  required="" >
+                   <input name="estudio_realizado" type="text"    class="form-control" style="" autocomplete="of"  value=""  required="" >
               </div>
 		        
 		    			   
@@ -297,7 +297,7 @@
           <div class="form-group input-group-sm">
           <div class="form-group input-group-sm">
            <label ><span class="asterisco">*</span>Estado</label>
-           <select name="parentesco" type="text"    tabindex="3" class="form-control " autocomplete="of" required="">
+           <select name="estado" type="text"    tabindex="3" class="form-control " autocomplete="of" required="">
            <option value="">Selec</option>
            <option value="En Cuerso">En Cuerso</option>
            <option value="Incompleto">Incompleto</option>
@@ -536,8 +536,8 @@ $(function()
       html=html+'<tr>';
       
       html=html+'<td>'+ personas[index].integrantes +'</td>';
-      html=html+'<td>'+ value.parentesco+'</td>';  
-      html=html+'<td>'+ value.nombres+'</td>';
+      html=html+'<td>'+ value.estudio_realizado+'</td>';  
+      html=html+'<td>'+ value.estado+'</td>';
   
 	  
 	  
