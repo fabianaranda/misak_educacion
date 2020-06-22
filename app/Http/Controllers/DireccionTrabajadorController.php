@@ -15,7 +15,11 @@ class DireccionTrabajadorController extends Controller
     {
                 // llamar tipo programa
               $tipo_trabajo = DB::table("tipo_trabajo")->pluck("nombre_tipo_trabajo","id_tipo_trabajo");
-               // llamar tipo pensiones
+              
+                // llamar para la direccion del lugar donde va trabajr y la institucion educativa
+                $departemento_lugar_trabajo = DB::table("departemento_lugar_trabajo")->pluck("nombre_depatamento_trabajo","codigo_departamento_trabajo");
+              
+              // llamar tipo pensiones
                $pensiones = DB::table("pensiones")->pluck("nombre_pensiones","id_pesiones");
 
                // llamar tipo contrato
@@ -28,7 +32,7 @@ class DireccionTrabajadorController extends Controller
                  $programa = DB::table("programa")->pluck("nombre_programa","codigo_programa");
        // return view('interfaces.hogar',compact('departamento','id_vivienda'));
               //variables  de la tabalas, deprtamento, economia, comida
-            return view('interfaces.ingreso_trabajador',compact('departamento','programa','tipo_trabajo','pensiones','tipo_contrato'));
+            return view('interfaces.ingreso_trabajador',compact('departamento','programa','tipo_trabajo','pensiones','tipo_contrato','departemento_lugar_trabajo'));
         
        
     }
@@ -63,6 +67,72 @@ class DireccionTrabajadorController extends Controller
         return response()->json($categoria_trabajo);
 
     }
+
+    
+/// llamar table direccion y lugar de trabajo
+public function getmunicipio_lugar_trabajo(Request $request)
+
+{
+
+    $municipio_lugar_trabajo = DB::table("municipio_lugar_trabajo")
+
+    ->where("codigo_departamento_trabajo",$request->codigo_departamento_trabajo)
+
+    ->pluck("nombre_municipio_trabajo","codigo_municipio_trabajo");
+
+    return response()->json($municipio_lugar_trabajo);
+
+}
+
+    
+/// llamar table nombre_institucion
+public function getnombre_institucion(Request $request)
+
+{
+
+    $nombre_institucion= DB::table("nombre_institucion")
+
+    ->where("codigo_municipio_trabajo",$request->codigo_municipio_trabajo)
+
+    ->pluck("nombre_institucion_trabajo","id_nombre_institucion");
+
+    return response()->json($nombre_institucion);
+
+}
+
+    
+/// llamar table tipo_institucion
+public function getnombre_tipo_institucion(Request $request)
+
+{
+
+    $tipo_institucion= DB::table("tipo_institucion")
+
+    ->where("id_nombre_institucion",$request->id_nombre_institucion)
+
+    ->pluck("nombre_tipo_institucion","id_tipo_institucion");
+
+    return response()->json($tipo_institucion);
+
+}
+
+
+/// llamar table sede_institucion
+public function getnombre_sede_institucion(Request $request)
+
+{
+
+    $sede_institucion= DB::table("sede_institucion")
+
+    ->where("id_tipo_institucion",$request->id_tipo_institucion)
+
+    ->pluck("nombre_sede_institucion","id_sede_institucion");
+
+    return response()->json($sede_institucion);
+
+}
+
+
 
 
 /*

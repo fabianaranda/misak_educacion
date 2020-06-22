@@ -716,26 +716,29 @@
             <label ><span class="asterisco">*</span>Departamento donde va laboral</label>
             <div >
 	
-                    <div class="input-group-sm">
-                   <input name="" type="text" value="" maxlength="20"  class="form-control" autocomplete="off">
-            
-                    </div>
+                     <select name="departamento" id="departemento_lugar_trabajo" class="form-control" style="width:" required="" >
+            	<option value="" selected disabled>Selecione Departamento</option>
+                  @foreach($departemento_lugar_trabajo as $key => $departemento_lugar_trabajo)
+                  <option value="{{$key}}"> {{$departemento_lugar_trabajo}}</option>
+                  @endforeach
+
+             </select>
                 
              </div>
         </div>
 
         <div class="form-group input-group-sm">
             <label for="txtbarrio">Institucion donde va laboral</label>
-            <input name="" type="text" value="Guambian" maxlength="100" class="form-control OnlyTxt" autocomplete="off">
-            
+            <select name="municipio" id="nombre_institucion" class="form-control" style="width:" required="" >
+                </select>
         </div>
                         
        
 
         <div class="form-group input-group-sm">
             <label ><span class="asterisco"></span>Sede de la institucion donde va laboral</label>
-            <input name="" type="text" maxlength="250" class="form-control" autocomplete="off">
-            
+            <select name="municipio" id="sede_institucion" class="form-control" style="width:" required="" >
+                </select>
         </div>
 
     </div>
@@ -746,8 +749,8 @@
             <div >
 	
                     <div class="input-group-sm">
-                       <input name="" type="text" value="" maxlength="20" class="form-control" autocomplete="off">
-            
+                        <select name="municipio" id="municipio_lugar_trabajo" class="form-control" style="width:" required="" >
+                </select>
                     </div>
                 
             </div>
@@ -756,12 +759,8 @@
                         
         <div class="form-group input-group-sm">
             <label ><span class="asterisco">*</span>Tipo institucion donde va laboral</label>
-            <select name=""  tabindex="25" class="form-control">
-	<option value="Seleccione">Seleccione</option>
-	<option value="1">Urbano</option>
-	<option  value="2">Rural</option>
-
-</select>
+            <select name="municipio" id="tipo_institucion" class="form-control" style="width:" required="" >
+                </select>
         </div>
 
        
@@ -1147,7 +1146,113 @@ $('#persona').submit(function(e)
  
 </script>
 
-
+<!-- selecionar direccion y lugar de trabajo -->
+<script type="text/javascript">
+    $('#departemento_lugar_trabajo').change(function(){
+    var lugar_trabajoID = $(this).val();    
+    if(lugar_trabajoID){
+        $.ajax({
+           type:"GET",
+           url:"{{url('get-municipio_lugar_trabajo-list')}}?codigo_departamento_trabajo="+lugar_trabajoID,
+           success:function(res){               
+            if(res){
+                $("#municipio_lugar_trabajo").empty();
+                $("#municipio_lugar_trabajo").append('<option>Seleccione Categoria</option>');
+                $.each(res,function(key,value){
+                    $("#municipio_lugar_trabajo").append('<option value="'+key+'">'+value+'</option>');
+                });
+           
+            }else{
+               $("#municipio_lugar_trabajo").empty();
+            }
+           }
+        });
+    }else{
+        $("#municipio_lugar_trabajo").empty();
+        $("#nombre_institucion").empty();
+    }      
+   });
+ 
+   $('#municipio_lugar_trabajo').on('change',function(){
+    var  municipioID = $(this).val();    
+    if( municipioID){
+        $.ajax({
+           type:"GET",
+           url:"{{url('get-nombre-instituciono-list')}}?codigo_municipio_trabajo="+municipioID,
+           success:function(res){               
+            if(res){
+                $("#nombre_institucion").empty();
+                $("#nombre_institucion").append('<option>Seleccione Resguardo </option>');
+                $.each(res,function(key,value){
+                    $("#nombre_institucion").append('<option value="'+key+'">'+value+'</option>');
+                });
+           
+            }else{
+               $("#nombre_institucion").empty();
+            }
+           }
+        });
+    }else{
+        $("#nombre_institucion").empty();
+        $("#tipo_institucion").empty();
+    }
+        
+   });
+   
+     $('#nombre_institucion').on('change',function(){
+    var  municipioID = $(this).val();    
+    if( municipioID){
+        $.ajax({
+           type:"GET",
+           url:"{{url('get-tipo-institucion-list')}}?id_nombre_institucion="+municipioID,
+           success:function(res){               
+            if(res){
+                $("#tipo_institucion").empty();
+                $("#tipo_institucion").append('<option>Seleccione Tipo Institucion </option>');
+                $.each(res,function(key,value){
+                    $("#tipo_institucion").append('<option value="'+key+'">'+value+'</option>');
+                });
+           
+            }else{
+               $("#tipo_institucion").empty();
+            }
+           }
+        });
+    }else{
+        $("#tipo_institucion").empty();
+        $("#sede_institucion").empty();
+    }
+        
+   });
+   
+   
+     $('#tipo_institucion').on('change',function(){
+    var  municipioID = $(this).val();    
+    if( municipioID){
+        $.ajax({
+           type:"GET",
+           url:"{{url('get-sede_institucion-list')}}?id_tipo_institucion="+municipioID,
+           success:function(res){               
+            if(res){
+                $("#sede_institucion").empty();
+                $("#sede_institucion").append('<option>Seleccione Tipo Institucion </option>');
+                $.each(res,function(key,value){
+                    $("#sede_institucion").append('<option value="'+key+'">'+value+'</option>');
+                });
+           
+            }else{
+               $("#sede_institucion").empty();
+            }
+           }
+        });
+    }else{
+        $("#sede_institucion").empty();
+        
+    }
+        
+   });
+   
+</script>
 
 
 

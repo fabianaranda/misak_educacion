@@ -49,10 +49,22 @@ Route::get('Ingresar-Trabajador','DireccionTrabajadorController@direccionTrabaja
 Route::get('get-municipio-list','DireccionTrabajadorController@getmunicipio');
 /// llamar tablas categoria_trabajo
 Route::get('get-categoria_trabajo-list','DireccionTrabajadorController@getcategoria_trabajo');
+// llamar table direccion y lugar de trabajo ///
+Route::get('get-municipio_lugar_trabajo-list','DireccionTrabajadorController@getmunicipio_lugar_trabajo');
+// llamar table nombre_institucion ///
+Route::get('get-nombre-instituciono-list','DireccionTrabajadorController@getnombre_institucion');
+// llamar table tipo_institucion ///
+Route::get('get-tipo-institucion-list','DireccionTrabajadorController@getnombre_tipo_institucion');
+// llamar table sede_institucion ///
+Route::get('get-sede_institucion-list','DireccionTrabajadorController@getnombre_sede_institucion');
 /*Route::get('get-resguardo-list','DireccionTrabajadorController@getresguardo');
 Route::get('get-zona-list','DireccionTrabajadorController@getzona');
 Route::get('get-vereda-list','DireccionTrabajadorController@getvereda');
 Route::get('get-sector-list','DireccionTrabajadorController@getsector');*/
+
+
+
+
 
 Route::POST('Vivienda-Hogar/Guardado', 'GuardarPersonaController@create_trabajador');
 
