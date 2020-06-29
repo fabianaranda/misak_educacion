@@ -171,7 +171,7 @@
                         <img src="{{asset('icon/contact.png')}}">
                          <label>CabildoGuambia@gmail.com</label>
                     </div>
-                     
+                    <a href="{{ route('imprimir') }}">Imprime el archivo</a>
                    
 
 

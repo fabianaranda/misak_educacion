@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\personas;
+use\App\nivel_academico;
 use DB;
+use App\User;
 use App\Role;
 class InterfacesController extends Controller
 {
@@ -30,19 +32,17 @@ class InterfacesController extends Controller
 
 
             // intefaz  certificados laborales   
-            public  function interfas_certificados_laborales($id_persona ,Request $request)
+            public  function interfas_certificados_laborales()
             {        
-                $request->user()->authorizeRoles(['acceso total','certificados laboral']);
-                    
-                $datos = DB:: table('programa')
-                    ->join('personas', 'programa.codigo_programa', '=', 'personas.codigo_programa')
-                    ->join('municipio', 'municipio.codigo_municipio', '=', 'personas.codigo_municipio')
-                    ->join('departamento', 'departamento.codigo_departamento', '=', 'municipio.codigo_departamento')
-                    ->where('personas.id',$id_persona)->get();
-                return view('interfaces.certificados_laboral',compact('datos'));
+                 
+                $users = User::get();
+                return view('interfaces.certificados_laboral',compact('users'));
+
+                //return view('interfaces.certificados_laboral');
             }
 
            // intefaz  certificados  registro sistema  
+		   
            public  function interfasRegistroSistema($id_persona ,Request $request)
            { 
             $request->user()->authorizeRoles(['acceso total','certificado registro laboral']);
@@ -73,17 +73,22 @@ class InterfacesController extends Controller
             }
 
               // intefaz  nivel educativo  
-            public  function interfas_nivel_academico(Request $request)
+            public  function interfas_nivel_academico(Request $request, $id_persona)
             {
                 $request->user()->authorizeRoles(['acceso total','ingreso de empleado al sistema']);
-                return view('interfaces.nivel_academico');
+               
+                       
+                $data = personas::findOrFail($id_persona);
+ 
+                    return view('interfaces.nivel_academico',compact('id_persona'));
             }
 
                 // intefaz  observaciones trabajador 
-            public  function interfas_observaciones_trabajador(Request $request)
+            public  function interfas_observaciones_trabajador(Request $request, $id_persona)
             {
                 $request->user()->authorizeRoles(['acceso total','ingreso de empleado al sistema']);
-                return view('interfaces.observaciones');
+                $data = nivel_academico::findOrFail($id_persona);
+                return view('interfaces.observaciones' , compact('datos'));
             }
 
 
@@ -98,11 +103,11 @@ class InterfacesController extends Controller
                
                 ->where('personas.id',$id_persona)->get(); */
                 
-                  $datos = DB:: table('programa')
-                 ->join('personas', 'programa.codigo_programa', '=', 'personas.codigo_programa')
-                 ->join('municipio', 'municipio.codigo_municipio', '=', 'personas.codigo_municipio')
-                 ->join('departamento', 'departamento.codigo_departamento', '=', 'municipio.codigo_departamento')
-                 ->where('personas.id',$id_persona)->get();
+                 // $datos = DB:: table('personas')
+               //  ->join('personas', 'programa.codigo_programa', '=', 'personas.codigo_programa')
+                 //->join('municipio', 'municipio.codigo_municipio', '=', 'personas.codigo_municipio')
+                 //->join('departamento', 'departamento.codigo_departamento', '=', 'municipio.codigo_departamento')
+                 //->where('personas.id',$id_persona)->get();
 
                    return view('interfaces.informacion_trabajador',compact('datos'));
                 }

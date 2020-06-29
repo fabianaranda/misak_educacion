@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use Caffeinated\Shinobi\Models\Role;
 use App\User;
 use App\Role;
+use App\programas;
 class UserController extends Controller
 {
     /**
@@ -65,6 +66,7 @@ class UserController extends Controller
         return redirect()->route('users.edit', $user->id)
             ->with('info', 'Usuario guardado con éxito');
     }
+
          
     public function show($id)
     {
@@ -78,16 +80,43 @@ class UserController extends Controller
 
         return back()->with('info', 'Eliminado correctamente');
     }
+   
+
+
+
+    public function indexz( $id_persona)
+    {   
+        //$users = User::get();
+        $users = User::findOrFail($id_persona);
+        return view('users',compact('users'));
+    }
+  
     /**
-     * Remove the specified resource from storage.
+     * Responds with a welcome message with instructions
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   // public function destroy($id)
-    //{
-        //$user = User::find($id)->delete();
+    public function changeStatus(Request $request)
+    {
+        $user = User::find($request->user_id);
+        $user->status = $request->status;
+        $user->save();
+  
+      return response()->json(['success'=>'Status change successfully.']);
+    }
 
-        //return back()->with('info', 'Eliminado correctamente');
-    //}
+    
+    function create_trabajador(Request $data){
+        $user = new  programas();
+        $user->nombre_programas= $data['nombre_programas'];
+      
+
+        $user->save();
+        $user->id;
+       
+        //return redirect()->route('interfaces.hogar');
+       // return redirect()->route('interfaces.Ingresar_personas', ['id_Hogar' => $user->id]);
+       return ['validate'=>true,'id'=>$user->id];
+        //return view('hola');
+    }
 }

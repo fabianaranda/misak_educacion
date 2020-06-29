@@ -62,7 +62,7 @@
           <td colspan="2" height="25px";><div align="left">
 		  
       
-            <span class="subtitulo4"><b>Linea de Contrato: </b></span>&nbsp;<font size="0.6px", color="#fff";>{{$temp->nombre_programa}}</font>
+            <span class="subtitulo4"><b>Linea de Contrato: </b></span>&nbsp;<font size="0.6px", color="#fff";>{{$temp->id}}</font>
           </div></td>
         </tr>
         
@@ -113,9 +113,9 @@
                     
                 <tr bgcolor="#FFFFFF">
                   <td width="25%" bgcolor="#ddd" class="subtitulo2"><strong>DEPARTAMENTO</strong></td>
-                  <td width="23%" bgcolor="#FFF" class="subtitulo2">{{$temp->nombre_depatamento }}&nbsp;</td>
+                  <td width="23%" bgcolor="#FFF" class="subtitulo2">{{$temp->id }}&nbsp;</td>
                   <td width="26%" bgcolor="#ddd" class="subtitulo2"><strong>MUNICIPIO</strong></td>
-                  <td width="26%" bgcolor="#FFF" class="subtitulo2">{{$temp->nombre_municipio }}&nbsp;</td> 
+                  <td width="26%" bgcolor="#FFF" class="subtitulo2">{{$temp->id}}&nbsp;</td> 
                 </tr>
 
                 <tr bgcolor="#FFFFFF">
@@ -141,7 +141,7 @@
         
                 <tr bgcolor="#FFFFFF">
                   <td height="22" bgcolor="#ddd" class="subtitulo2"><strong>PROGRAMA</strong></td>
-                  <td colspan="3" bgcolor="#FFF" class="subtitulo2">{{$temp->nombre_programa}}&nbsp;</td>
+                  <td colspan="3" bgcolor="#FFF" class="subtitulo2">{{$temp->id}}&nbsp;</td>
                 </tr>
                 <tr bgcolor="#FFFFFF">
                   <td height="22" bgcolor="#ddd" class="subtitulo2"><strong>TIPO CARGO</strong></td>
@@ -150,7 +150,7 @@
 
                 <tr bgcolor="#FFFFFF">
                   <td width="25%" bgcolor="#ddd" class="subtitulo2"><strong>INICIO CONTRATO</strong></td>
-                  <td width="23%" bgcolor="#FFF" class="subtitulo2">{{$temp->fecha_contratacion}}&nbsp;</td>
+                  <td width="23%" bgcolor="#FFF" class="subtitulo2">{{$temp->id}}&nbsp;</td>
                   <td width="26%" bgcolor="#ddd" class="subtitulo2"><strong>FIN DEL CONTRATO</strong></td>
                   <td width="26%" bgcolor="#FFF" class="subtitulo2">{{$temp->fin_contrato}}&nbsp;</td>
                 </tr>

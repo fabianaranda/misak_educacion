@@ -33,7 +33,7 @@ Route::any('Buscar-Persona', 'PersonasCertificadosController@buscar_persona');
 Route::get('Buscar-Persona','InterfacesController@interfas_buscar_persona_certificado')->name ('Buscar-Persona');
 
 
-Route::get('Certificados-Laborales/{id_persona}','InterfacesController@interfas_certificados_laborales')->name ('Certificados-Laborales');
+Route::get('Certificados-Laborales','InterfacesController@interfas_certificados_laborales')->name ('Certificados-Laborales');
 
 
 Route::any('Certificados-Registro-Sistema', 'BuscarCertificadoRegistroController@buscar_certificado_ID');
@@ -62,16 +62,15 @@ Route::get('get-zona-list','DireccionTrabajadorController@getzona');
 Route::get('get-vereda-list','DireccionTrabajadorController@getvereda');
 Route::get('get-sector-list','DireccionTrabajadorController@getsector');*/
 
-
-
-
-
 Route::POST('Vivienda-Hogar/Guardado', 'GuardarPersonaController@create_trabajador');
 
+// route guardar nivel academico y vista nivel academico 
+Route::POST('Nivel_Academico', 'EducacionSuperiorController@create_educacion_superior')->name ('Nivel_Academico');
+Route::get('Nivel-Academico/{id_persona}','InterfacesController@interfas_nivel_academico')->name ('Nivel-Academico');
 
-Route::get('Nivel-Academico','InterfacesController@interfas_nivel_academico')->name ('Nivel-Academico');
 
-Route::get('Observaciones-Trabajador','InterfacesController@interfas_observaciones_trabajador')->name ('Observaciones-Trabajador');
+
+Route::get('Observaciones-Trabajador/{id_persona}','InterfacesController@interfas_observaciones_trabajador')->name ('Observaciones-Trabajador');
 
 
 
@@ -106,7 +105,7 @@ Route::get('/Menu-Usuarios','InterfacesController@vista_interfas_menu_usuarios')
 
 //Route::post('/Ingresar_Usuarios', 'usuariosController@create');
 //Users
-Route::POST('Ingresar_Usuarios/Guardado', 'usuariosController@create')->name('Ingresar_Usuarios.create');;
+Route::POST('Ingresar_Usuarios/Guardado', 'usuariosController@create')->name('Ingresar_Usuarios.create');
 
 
 //->middleware('permission:users.index');
@@ -124,3 +123,18 @@ Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
 ////->middleware('permission:users.edit');
 
+
+
+Route::get('users/$id_persona', 'UserController@indexz');
+Route::get('changeStatus', 'UserController@changeStatus');
+
+//Route::POST('users', 'UserController@create_trabajador')->name('users');
+
+//CONTROLADORES  PARA GENEDAR PdfController
+
+Route::get('pdf','PdfController@getIndex');
+//Route::get('pdf/generar','PdfController@getGenerar');
+
+Route::get('generate-pdf','GeneratePdfController@generateMyPDF');
+
+Route::get('imprimir', 'imprimirController@imprimir')->name('imprimir');

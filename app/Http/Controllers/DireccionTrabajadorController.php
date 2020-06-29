@@ -29,7 +29,7 @@ class DireccionTrabajadorController extends Controller
                  ///leer los datos comidad propias y economia  de la familia misak, desde BD  tabla  comidas propias y tabla economia misak 
             
                 
-                 $programa = DB::table("programa")->pluck("nombre_programa","codigo_programa");
+                 //$programa = DB::table("programa")->pluck("nombre_programa","codigo_programa");
        // return view('interfaces.hogar',compact('departamento','id_vivienda'));
               //variables  de la tabalas, deprtamento, economia, comida
             return view('interfaces.ingreso_trabajador',compact('departamento','programa','tipo_trabajo','pensiones','tipo_contrato','departemento_lugar_trabajo'));

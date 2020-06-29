@@ -177,6 +177,9 @@ return [
          
         //Collective \ Html \ HtmlServiceProvider :: class ,
         Collective\Html\HtmlServiceProvider::class,
+
+        LynX39\LaraPdfMerger\PdfMergerServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -229,6 +232,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class, 
+        'PdfMerger' => LynX39\LaraPdfMerger\Facades\PdfMerger::class,
+
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
